@@ -1,39 +1,48 @@
 # My Favorite Restaurant List
 
-This is a sample website from https://tw.alphacamp.co
+A simple website for my favorite restaurant introduction
 
 ## Features
 
-Present my 8 favorite restaurants, follows RESTful API.
+- listing restaurants from restaurant api
 
-Present detailed information for restaurant when click on picture of it.
+- searching restaurants by name or categories
 
-Can be searched restaurants with keywords by name or categories, via search bar on top of restaurant list.
+- clicking on picture to present detailed information for restaurant
 
-## Prerequisites
+## Environment
 
 Install
 
-- [Node.js]
+- [node.js]
+- [npm]
 - [express]
 - [express-handlebars]
 - [nodemon]
-- [mongoose]
-- [method-override]
-
-which includes in [Node Package Manager][npm]
 
 ## Installing
 
-1. Prepare
-   `git clone`
-2. Open your terminal and run `nodemon app.js`
-3. Run with localhost at `http://localhost:3000`
+1. 在終端機輸入指令 Clone 此專案至本機電腦
+```
+git clone https://github.com/mingmoth/restaurant.git
+```
+2. 移至檔案夾
+```
+cd restaurant
+```
+3. 安裝相關套件
+```
+npm install
+```
+4. 啟動專案
+```
+npm run dev
+```
+5. 使用瀏覽器開啟：http://localhost:3000 即可瀏覽本專案
+
 
 [node.js]: https://nodejs.org/
 [npm]: https://www.npmjs.com/get-npm
 [express]: https://www.npmjs.com/package/express
 [express-handlebars]: https://www.npmjs.com/package/express-handlebars
 [nodemon]: https://www.npmjs.com/package/nodemon
-[mongoose]: https://mongoosejs.com/
-[method-override]: https://www.npmjs.com/package/method-override
