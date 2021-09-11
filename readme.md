@@ -1,6 +1,6 @@
 # My Favorite Restaurant List
 
-\*\*This is a sample website from https://tw.alphacamp.co
+This is a sample website from https://tw.alphacamp.co
 
 ## Features
 
