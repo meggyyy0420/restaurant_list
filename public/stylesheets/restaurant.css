@@ -45,6 +45,11 @@ header {
   color: white;
 }
 
+.create-btn {
+  color: #666666;
+  font-size: 0.9rem;
+}
+
 .form-control:focus {
   box-shadow: none;
   border-color: #ced4da;
