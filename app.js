@@ -39,6 +39,13 @@ app.get('/', (req, res) => {
     .then(restaurants => res.render('index', { restaurants }))
     .catch(err => console.log(err))
 })
+app.get('/search', (req, res) => {
+  const keyword = req.query.keyword
+  const restaurants = restaurantList.results.filter(restaurant => {
+    return restaurant.name.toLowerCase().includes(keyword.toLowerCase()) || restaurant.category.toLowerCase().includes(keyword.toLowerCase())
+  })
+  res.render('index', { restaurants: restaurants, keyword: keyword });
+})
 
 app.get('/restaurants/new', (req, res) => {
   res.render('new')
@@ -59,31 +66,47 @@ app.get('/restaurants/:id', (req, res) => {
 
 })
 
-// app.get('/todos/:id/edit', (req, res) => {
-//   const id = req.params.id
-//   Todo.findById(id)
-//     .lean()
-//     .then(todo => res.render('edit', { todo }))
-//     .catch(err => console.log(err))
+app.get('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  Restaurant.findById(id)
+    .lean()
+    .then(restaurant => res.render('edit', { restaurant }))
+    .catch(err => console.log(err))
 
-// })
+})
 
-// app.post('/todos/:id/edit', (req, res) => {
-//   const id = req.params.id
-//   const name = req.body.name
-//   Todo.findById(id)
-//     .then(todo => {
-//       todo.name = name
-//       return todo.save()
-//     })
-//     .then(() => res.redirect(`/todos/${id}`))
-//     .catch(error => console.log(error))
-// })
+app.post('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  const name = req.body.name
+  const name_en = req.body.name_en
+  const category = req.body.category
+  const image = req.body.image
+  const location = req.body.location
+  const phone = req.body.phone
+  const google_map = req.body.google_map
+  const rating = req.body.rating
+  const description = req.body.description
+  Restaurant.findById(id)
+    .then(restaurant => {
+      restaurant.name = name
+      restaurant.name_en = name_en
+      restaurant.category = category
+      restaurant.image = image
+      restaurant.location = location
+      restaurant.phone = phone
+      restaurant.google_map = google_map
+      restaurant.rating = rating
+      restaurant.description = description
+      return restaurant.save()
+    })
+    .then(() => res.redirect(`/restaurants/${id}`))
+    .catch(error => console.log(error))
+})
 
-// app.post('/todos/:id/delete', (req, res) => {
+// app.post('/restaurants/:id/delete', (req, res) => {
 //   const id = req.params.id
-//   return Todo.findById(id)
-//     .then(todo => todo.remove())
+//   return Restaurant.findById(id)
+//     .then(restaurant => restaurant.remove())
 //     .then(() => res.redirect('/'))
 //     .catch(error => console.log(error))
 // })
