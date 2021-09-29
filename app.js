@@ -50,14 +50,14 @@ app.post('/restaurants', (req, res) => {
     .catch(error => console.log(error))
 })
 
-// app.get('/todos/:id', (req, res) => {
-//   const id = req.params.id
-//   Todo.findById(id)
-//     .lean()
-//     .then(todo => res.render('detail', { todo }))
-//     .catch(err => console.log(err))
+app.get('/restaurants/:id', (req, res) => {
+  const id = req.params.id
+  Restaurant.findById(id)
+    .lean()
+    .then(restaurant => res.render('detail', { restaurant }))
+    .catch(err => console.log(err))
 
-// })
+})
 
 // app.get('/todos/:id/edit', (req, res) => {
 //   const id = req.params.id
