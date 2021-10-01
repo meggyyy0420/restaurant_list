@@ -18,4 +18,19 @@ router.get('/search', (req, res) => {
   res.render('index', { restaurants: restaurants, keyword: keyword });
 })
 
+// sorting routes
+router.get('/:sort', (req, res) => {
+  const selectedSort = req.params.sort
+  const sortObj = {
+    'new-old': { _id: 'desc' },
+    'rating': { rating: 'desc' },
+    'category': { category: 'asc' }
+  }
+  Restaurant.find()
+    .lean()
+    .sort(sortObj[selectedSort])
+    .then(restaurants => res.render('index', { restaurants }))
+    .catch(error => console.error(error))
+})
+
 module.exports = router
