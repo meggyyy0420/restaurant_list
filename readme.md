@@ -8,7 +8,16 @@ A simple website for my favorite restaurant introduction
 
 - searching restaurants by name or categories
 
+- review the full restaurant list at the home page 
+
 - clicking on picture to present detailed information for restaurant
+
+- create a new restaurant card
+
+- update the info whenever you want
+
+- remove the restaurant
+
 
 ## Environment
 
@@ -19,6 +28,9 @@ Install
 - [express]
 - [express-handlebars]
 - [nodemon]
+- [mongoDB]
+- [mongoose]
+- [body-parser]
 
 ## Installing
 
@@ -46,3 +58,6 @@ npm run dev
 [express]: https://www.npmjs.com/package/express
 [express-handlebars]: https://www.npmjs.com/package/express-handlebars
 [nodemon]: https://www.npmjs.com/package/nodemon
+[mongoDB]: https://www.mongodb.com/
+[mongoose]: https://mongoosejs.com/
+[body-parser]: https://www.npmjs.com/package/body-parser
