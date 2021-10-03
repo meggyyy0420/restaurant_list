@@ -18,6 +18,8 @@ A simple website for my favorite restaurant introduction
 
 - remove the restaurant
 
+- sort the restaurant list in update ascending , update descending , score descending or category
+
 
 ## Environment
 
