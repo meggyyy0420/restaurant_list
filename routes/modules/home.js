@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
     .then(restaurants => res.render('index', { restaurants }))
     .catch(err => console.log(err))
 })
+
 router.get('/search', (req, res) => {
   const keyword = req.query.keyword
   const restaurants = restaurantList.results.filter(restaurant => {
