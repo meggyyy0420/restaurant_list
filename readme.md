@@ -38,7 +38,7 @@ Install
 
 1. 在終端機輸入指令 Clone 此專案至本機電腦
 ```
-git clone https://github.com/mingmoth/restaurant.git
+git clone https://github.com/meggyyy0420restaurant.git
 ```
 2. 移至檔案夾
 ```
