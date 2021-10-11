@@ -16,6 +16,7 @@ app.set('view engine', 'hbs')
 
 // setting static files ///
 app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 
 app.use(routes)
