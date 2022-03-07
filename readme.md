@@ -2,7 +2,7 @@
 
 # My Favorite Restaurant List
 
-A simple website for my favorite restaurant introduction
+A simple website for my favorite restaurant introduction  on heroku
 
 ## Features
 
